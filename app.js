@@ -160,6 +160,11 @@ if (hamburger && navLinks) {
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('open');
   });
+  // Close mobile nav when any link is clicked
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+  }));
 }
 
 // ===== CART HELPERS =====
@@ -266,7 +271,7 @@ if (catalogueGrid) {
   function applyFilters() {
     const search = document.getElementById('searchInput')?.value.toLowerCase() || '';
     const catVal = document.querySelector('input[name="cat"]:checked')?.value || 'all';
-    const maxPrice = parseFloat(document.getElementById('priceRange')?.value || 200);
+    const maxPrice = parseFloat(document.getElementById('priceRange')?.value || 25000);
     const activeCol = document.querySelector('.swatch.active-swatch')?.dataset.col || 'all';
     const sizes = [...document.querySelectorAll('.size-check:checked')].map(i => i.value);
     const sort = document.getElementById('sortSelect')?.value || 'default';
@@ -455,6 +460,13 @@ function observeFadeUps() {
   document.querySelectorAll('.fade-up:not(.visible)').forEach(el => obs.observe(el));
 }
 observeFadeUps();
+
+// ===== PRODUCT PAGE AUTO-INIT =====
+if (document.getElementById('pdTitle')) {
+  const pid = parseInt(new URLSearchParams(window.location.search).get('id'));
+  const prod = window.tileData.find(p => p.id === pid);
+  if (prod) window.loadProductDetail(prod);
+}
 
 // ===== INIT =====
 updateCartUI();
