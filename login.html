@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – TileVista</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="auth-body">
+
+  <div class="auth-container">
+    <div class="auth-visual">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=900&q=80" alt="Tiles"/>
+      <div class="auth-visual-overlay"></div>
+      <div class="auth-visual-content">
+        <a href="index.html" class="logo" style="color:#fff"><span class="logo-icon">⬡</span><span class="logo-text">TileVista</span></a>
+        <h2>Transform Your Space with Premium Tiles</h2>
+        <p>Join thousands of happy customers who found their perfect tiles at TileVista.</p>
+        <div class="auth-features">
+          <div><i class="fas fa-check"></i> Browse 500+ tile designs</div>
+          <div><i class="fas fa-check"></i> Save your favourites</div>
+          <div><i class="fas fa-check"></i> Request quotes easily</div>
+          <div><i class="fas fa-check"></i> Track your enquiries</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-form-side">
+      <div class="auth-form-inner">
+        <a href="index.html" class="auth-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="loginTab">Sign In</button>
+          <button class="auth-tab" id="registerTab">Register</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="loginForm" class="auth-panel">
+          <h2>Welcome Back</h2>
+          <p>Sign in to your TileVista account</p>
+          <form action="process_login.php" method="POST">
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-icon-wrap">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="you@example.com" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-icon-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="loginPwd" placeholder="Your password" required/>
+                <button type="button" class="pwd-toggle" onclick="togglePwd('loginPwd')" title="Toggle password visibility" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="form-row-inline">
+              <label class="remember-me"><input type="checkbox" name="remember"/> Remember me</label>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn-primary w-full">Sign In <i class="fas fa-arrow-right"></i></button>
+          </form>
+          <div class="auth-divider"><span>or continue with</span></div>
+          <div class="social-btns">
+            <button class="social-btn"><i class="fab fa-google"></i> Google</button>
+            <button class="social-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+          </div>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="registerForm" class="auth-panel" style="display:none">
+          <h2>Create Account</h2>
+          <p>Join TileVista and start browsing our collection</p>
+          <form action="process_register.php" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstname" placeholder="First name" required/>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastname" placeholder="Last name" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-icon-wrap">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="you@example.com" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <div class="input-icon-wrap">
+                <i class="fas fa-phone"></i>
+                <input type="tel" name="phone" placeholder="+60 12-345 6789"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-icon-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="regPwd" placeholder="Min 8 characters" required/>
+                <button type="button" class="pwd-toggle" onclick="togglePwd('regPwd')" title="Toggle password visibility" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label"><input type="checkbox" required/> I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+            <button type="submit" class="btn-primary w-full">Create Account <i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

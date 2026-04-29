@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tile Catalogue – MultyTilecenter</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span class="logo-text">MultyTilecenter </span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html" class="active">Catalogue</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta">My Account</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="catalogue.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount">0</span></a>
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle mobile menu" title="Toggle mobile menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1600&q=80" alt="Catalogue"/>
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Catalogue</span></div>
+      <h1>Tile Catalogue</h1>
+      <p>Explore our complete collection of 500+ premium tile designs</p>
+    </div>
+  </section>
+
+  <!-- CATALOGUE BODY -->
+  <section class="catalogue-section">
+    <div class="container">
+      <div class="catalogue-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="filter-group">
+            <h4>Search</h4>
+            <div class="search-box">
+              <input type="text" id="searchInput" placeholder="Search tiles..." />
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Category</h4>
+            <div class="filter-options" id="catFilter">
+              <label class="filter-check active-filter" data-val="all"><input type="radio" name="cat" value="all" checked/> All Categories</label>
+              <label class="filter-check" data-val="floor"><input type="radio" name="cat" value="floor"/> Floor Tiles</label>
+              <label class="filter-check" data-val="wall"><input type="radio" name="cat" value="wall"/> Wall Tiles</label>
+              <label class="filter-check" data-val="outdoor"><input type="radio" name="cat" value="outdoor"/> Outdoor</label>
+              <label class="filter-check" data-val="mosaic"><input type="radio" name="cat" value="mosaic"/> Mosaic</label>
+              <label class="filter-check" data-val="marble"><input type="radio" name="cat" value="marble"/> Marble Effect</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Price Range</h4>
+            <div class="price-range">
+              <input type="range" id="priceRange" min="1000" max="25000" value="20000" title="Price range" aria-label="Price range"/>
+              <div class="price-labels"><span>LKR 1000</span><span id="priceVal">LKR 20000</span></div>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Color</h4>
+            <div class="color-swatches" id="colorFilter">
+              <span class="swatch active-swatch" data-col="all" style="background:linear-gradient(135deg,#ccc,#888)" title="All"></span>
+              <span class="swatch" data-col="white" style="background:#f5f5f0;border:1px solid #ddd" title="White"></span>
+              <span class="swatch" data-col="grey" style="background:#888" title="Grey"></span>
+              <span class="swatch" data-col="beige" style="background:#c8b89a" title="Beige"></span>
+              <span class="swatch" data-col="terracotta" style="background:#c27752" title="Terracotta"></span>
+              <span class="swatch" data-col="black" style="background:#222" title="Black"></span>
+              <span class="swatch" data-col="blue" style="background:#5b7a99" title="Blue"></span>
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Size</h4>
+            <div class="filter-options">
+              <label class="filter-check"><input type="checkbox" class="size-check" value="30x30"/> 30×30 cm</label>
+              <label class="filter-check"><input type="checkbox" class="size-check" value="60x60"/> 60×60 cm</label>
+              <label class="filter-check"><input type="checkbox" class="size-check" value="30x60"/> 30×60 cm</label>
+              <label class="filter-check"><input type="checkbox" class="size-check" value="60x120"/> 60×120 cm</label>
+              <label class="filter-check"><input type="checkbox" class="size-check" value="20x20"/> 20×20 cm</label>
+            </div>
+          </div>
+          <button class="btn-primary w-full" id="resetFilters">Reset Filters</button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="catalogue-main">
+          <div class="catalogue-header">
+            <div class="result-count" id="resultCount">Showing all tiles</div>
+            <div class="sort-box">
+              <select id="sortSelect" aria-label="Sort products">
+                <option value="default">Sort by: Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name">Name: A–Z</option>
+              </select>
+            </div>
+          </div>
+          <div class="products-grid" id="catalogueGrid"></div>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>My Cart</h3>
+      <button id="closeCart" aria-label="Close cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total"><span>Total:</span><span id="cartTotal">LKR 0.00</span></div>
+      <a href="contact.html" class="btn-primary w-full" aria-label="Request quote">Request Quote</a>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><span>⬡</span> MultyTilecenter</div>
+          <p>Your premium destination for tiles since 2010.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogue.html">Tile Catalogue</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">My Account</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Visit Our Showroom</h4>
+          <p><i class="fas fa-map-marker-alt"></i> 123, Jalan Tiles Indah, Subang Jaya</p>
+          <p><i class="fas fa-phone"></i> +60 3-5678 9000</p>
+          <p><i class="fas fa-clock"></i> Mon–Sat: 9AM – 6PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MultyTilecenter Sdn. Bhd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MultyTilecenter – Premium Tiles Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">MultyTilecenter</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">MultyTilecenter</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta">My Account</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="catalogue.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount">0</span></a>
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" title="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80" alt="Luxury Tile Background" class="hero-img"/>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">Established 2010 · Premium Quality</div>
+      <h1 class="hero-title">
+        <em>Craft Your</em><br/>
+        Perfect Space
+      </h1>
+      <p class="hero-subtitle">Discover a world of curated tile collections — from natural stone to handcrafted ceramics, designed to transform every room into a masterpiece.</p>
+      <div class="hero-actions">
+        <a href="catalogue.html" class="btn-primary">Explore Collection</a>
+        <a href="contact.html" class="btn-outline">Get a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Tile Designs</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">2000+</span><span class="stat-label">Happy Clients</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span><i class="fas fa-arrow-down"></i></div>
+  </section>
+
+  <!-- CATEGORIES STRIP -->
+  <section class="categories-strip">
+    <div class="container">
+      <div class="cat-grid">
+        <a href="catalogue.html?cat=floor" class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&q=80" alt="Floor Tiles"/>
+          </div>
+          <span>Floor Tiles</span>
+        </a>
+        <a href="catalogue.html?cat=wall" class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Wall Tiles"/>
+          </div>
+          <span>Wall Tiles</span>
+        </a>
+        <a href="catalogue.html?cat=outdoor" class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Outdoor"/>
+          </div>
+          <span>Outdoor</span>
+        </a>
+        <a href="catalogue.html?cat=mosaic" class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&q=80" alt="Mosaic"/>
+          </div>
+          <span>Mosaic</span>
+        </a>
+        <a href="catalogue.html?cat=marble" class="cat-card">
+          <div class="cat-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80" alt="Marble Effect"/>
+          </div>
+          <span>Marble Effect</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Our Collection</div>
+        <h2 class="section-title">Featured Tile Designs</h2>
+        <p class="section-sub">Handpicked selections from our most popular and newest arrivals</p>
+      </div>
+      <div class="products-grid" id="featuredGrid">
+        <!-- Injected by JS -->
+      </div>
+      <div class="section-footer">
+        <a href="catalogue.html" class="btn-primary">View All Tiles <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo-banner">
+    <div class="promo-inner">
+      <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1600&q=80" alt="Showroom" class="promo-img"/>
+      <div class="promo-overlay"></div>
+      <div class="promo-content">
+        <div class="promo-badge">New Arrivals 2025</div>
+        <h2>Italian Marble Collection</h2>
+        <p>Authentic Italian marble-effect porcelain tiles — the elegance of natural stone at an accessible price. Now available in 6 exclusive finishes.</p>
+        <a href="catalogue.html?cat=marble" class="btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <div class="section-label">Why MultyTilecenter</div>
+          <h2 class="section-title">Crafted for Perfection,<br/><em>Built to Last</em></h2>
+          <p>For over 15 years, MultyTilecenter has been the trusted name in premium tiles. We source from world-class manufacturers and offer expert guidance from design to installation.</p>
+          <ul class="why-list">
+            <li><i class="fas fa-check-circle"></i> 500+ unique tile designs in stock</li>
+            <li><i class="fas fa-check-circle"></i> Free design consultation for every client</li>
+            <li><i class="fas fa-check-circle"></i> Premium quality with manufacturer warranty</li>
+            <li><i class="fas fa-check-circle"></i> Fast sample delivery to your doorstep</li>
+          </ul>
+          <a href="contact.html" class="btn-outline-dark">Book a Consultation</a>
+        </div>
+        <div class="why-images">
+          <div class="img-mosaic">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Showroom" class="mosaic-large"/>
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400&q=80" alt="Tiles" class="mosaic-small"/>
+            <img src="https://images.unsplash.com/photo-1564540574859-0dfb63985953?w=400&q=80" alt="Design" class="mosaic-small"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Client Stories</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"MultyTilecenter transformed our bathroom completely. The quality of their marble-effect tiles is exceptional — you'd never guess they're porcelain!"</p>
+          <div class="testi-author"><div class="testi-avatar">SL</div><div><strong>Sarah Lim</strong><span>Petaling Jaya</span></div></div>
+        </div>
+        <div class="testi-card featured-testi">
+          <div class="testi-stars">★★★★★</div>
+          <p>"The online catalogue made it so easy to browse and shortlist designs before visiting. The team was incredibly helpful and knowledgeable. Highly recommend!"</p>
+          <div class="testi-author"><div class="testi-avatar">AH</div><div><strong>Ahmad Hassan</strong><span>Shah Alam</span></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"We used MultyTilecenter for our entire restaurant renovation. The outdoor tiles are still looking perfect two years later. Outstanding durability!"</p>
+          <div class="testi-author"><div class="testi-avatar">RC</div><div><strong>Rachel Chen</strong><span>Subang Jaya</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h2>Ready to Transform Your Space?</h2>
+          <p>Request a free quote or visit our showroom. Our design experts are ready to help you find the perfect tiles.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+          <a href="catalogue.html" class="btn-outline-light">Browse Catalogue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><span>⬡</span> MultyTilecenter</div>
+          <p>Your premium destination for tiles. Turning spaces into masterpieces since 2010.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogue.html">Tile Catalogue</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">My Account</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="catalogue.html?cat=floor">Floor Tiles</a></li>
+            <li><a href="catalogue.html?cat=wall">Wall Tiles</a></li>
+            <li><a href="catalogue.html?cat=outdoor">Outdoor Tiles</a></li>
+            <li><a href="catalogue.html?cat=mosaic">Mosaic Tiles</a></li>
+            <li><a href="catalogue.html?cat=marble">Marble Effect</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Visit Our Showroom</h4>
+          <p><i class="fas fa-map-marker-alt"></i> 123, Jalan Tiles Indah,<br/>47500 Subang Jaya, Selangor</p>
+          <p><i class="fas fa-phone"></i> +60 3-5678 9000</p>
+          <p><i class="fas fa-envelope"></i> hello@multytilecenter.com.my</p>
+          <p><i class="fas fa-clock"></i> Mon–Sat: 9AM – 6PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MultyTilecenter Sdn. Bhd. All rights reserved.</p>
+        <p>Designed with ♥ for quality spaces</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail – MultyTilecenter</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span class="logo-text">MultyTilecenter</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogue.html" class="active">Catalogue</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta">My Account</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="catalogue.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount">0</span></a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="product-detail-section">
+    <div class="container">
+      <div class="breadcrumb" style="margin-bottom:2rem">
+        <a href="index.html">Home</a> <span>/</span>
+        <a href="catalogue.html">Catalogue</a> <span>/</span>
+        <span id="pdBreadcrumb">Product</span>
+      </div>
+
+      <div class="product-detail-layout">
+        <!-- GALLERY -->
+        <div class="product-gallery">
+          <div class="gallery-main">
+            <img id="mainImage" src="" alt="Tile"/>
+            <div class="gallery-badges" id="pdBadges"></div>
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </div>
+
+        <!-- INFO -->
+        <div class="product-info">
+          <div class="product-category" id="pdCategory"></div>
+          <h1 class="product-title" id="pdTitle"></h1>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.8 (124 reviews)</span>
+          </div>
+          <div class="product-price" id="pdPrice"></div>
+          <p class="product-desc" id="pdDesc"></p>
+
+          <div class="product-specs">
+            <h4>Specifications</h4>
+            <div class="specs-grid" id="pdSpecs"></div>
+          </div>
+
+          <div class="product-actions">
+            <div class="qty-row">
+              <label>Quantity (boxes)</label>
+              <div class="qty-control">
+                <button onclick="changeQty(-1)">−</button>
+                <span id="qtyVal">1</span>
+                <button onclick="changeQty(1)">+</button>
+              </div>
+            </div>
+            <button class="btn-primary" id="addToCartBtn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            <a href="contact.html" class="btn-outline-dark"><i class="fas fa-paper-plane"></i> Request Quote</a>
+          </div>
+
+          <div class="product-meta-row">
+            <span><i class="fas fa-truck"></i> Sample delivery available</span>
+            <span><i class="fas fa-shield-alt"></i> Quality guaranteed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED PRODUCTS -->
+      <div class="related-section">
+        <h2 class="section-title">You May Also Like</h2>
+        <div class="products-grid" id="relatedGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>My Cart</h3>
+      <button id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total"><span>Total:</span><span id="cartTotal">LKR 0.00</span></div>
+      <a href="contact.html" class="btn-primary w-full">Request Quote</a>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><span>⬡</span> MultyTilecenter</div>
+          <p>Your premium destination for tiles since 2010.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-phone"></i> +60 3-5678 9000</p>
+          <p><i class="fas fa-envelope"></i> hello@multytilecenter.com.my</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MultyTilecenter Sdn. Bhd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // ===== PRODUCT DETAIL PAGE LOADER =====
+    console.log('[Product Page] Document ready - initializing product loader...');
+    
+    function initProductPage() {
+      console.log('[Product Page] initProductPage called');
+      console.log('[Product Page] window.tileData available:', !!window.tileData, 'Length:', window.tileData?.length);
+      
+      const params = new URLSearchParams(window.location.search);
+      const idParam = params.get('id');
+      console.log('[Product Page] URL id parameter:', idParam);
+      
+      if (!idParam) {
+        console.error('[Product Page] ERROR: No id parameter in URL. Expected: product.html?id=1');
+        showProductNotFound('Product ID not provided. <a href="catalogue.html">Browse catalogue</a>');
+        return;
+      }
+      
+      const id = parseInt(idParam, 10);
+      console.log('[Product Page] Parsed ID (int):', id);
+      
+      if (isNaN(id)) {
+        console.error('[Product Page] ERROR: ID is not a valid number:', idParam);
+        showProductNotFound('Invalid product ID. <a href="catalogue.html">Browse catalogue</a>');
+        return;
+      }
+      
+      if (!window.tileData) {
+        console.error('[Product Page] ERROR: window.tileData not available. app.js may not have loaded.');
+        showProductNotFound('Product data not loaded. Please refresh. <a href="catalogue.html">Browse catalogue</a>');
+        return;
+      }
+      
+      const product = window.tileData.find(p => p.id === id);
+      console.log('[Product Page] Product search result:', product ? `Found ID ${product.id}` : 'NOT FOUND');
+      
+      if (!product) {
+        const availableIds = window.tileData.map(p => p.id).join(', ');
+        console.warn('[Product Page] Available product IDs:', availableIds);
+        showProductNotFound(`Product ID ${id} not found. <a href="catalogue.html">Browse catalogue</a>`);
+        return;
+      }
+      
+      console.log('[Product Page] Loading product:', product.name);
+      window.loadProductDetail(product);
+    }
+    
+    function showProductNotFound(message) {
+      const layout = document.querySelector('.product-detail-layout');
+      if (layout) {
+        layout.innerHTML = `<div style="grid-column:1/-1;padding:4rem;text-align:center;color:#666"><h3 style="margin-bottom:1rem;color:#333">Product Not Found</h3><p>${message}</p></div>`;
+      }
+    }
+    
+    // Wait for app.js to load fully
+    if (document.readyState === 'loading') {
+      console.log('[Product Page] Document still loading, waiting for DOMContentLoaded...');
+      document.addEventListener('DOMContentLoaded', initProductPage);
+    } else {
+      console.log('[Product Page] Document already loaded, running immediately...');
+      initProductPage();
+    }
+  </script>
+</body>
+</html>
