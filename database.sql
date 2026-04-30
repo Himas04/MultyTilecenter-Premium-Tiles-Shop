@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- Default admin account (password: Admin@123)
 INSERT INTO users (firstname, lastname, email, phone, password_hash, role)
-VALUES ('Admin', 'TileVista', 'admin@tilevista.com.my', '+60355556789',
+VALUES ('Admin', 'TileVista', 'multytilecenter.mtc@gmail.com', '+60355556789',
         '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
 
 -- ===== CATEGORIES =====

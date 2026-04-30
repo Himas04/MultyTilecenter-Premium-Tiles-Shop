@@ -59,10 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
 
     if ($stmt->execute()) {
         // Send notification email (in production, configure SMTP)
-        $to      = "hello@multytilecenter.com.my";
+        $to      = "multytilecenter.mtc@gmail.com";
         $subject = "New Enquiry from $name – MultyTilecenter";
         $body    = "New enquiry received:\n\nName: $name\nEmail: $email\nPhone: $phone\nType: $type\nCategories: $cats\n\nMessage:\n$message";
-        $headers = "From: noreply@multytilecenter.com.my\r\nReply-To: $email";
+        $headers = "From: multytilecenter.mtc@gmail.com\r\nReply-To: $email";
         @mail($to, $subject, $body, $headers);
 
         echo json_encode(['success' => true, 'message' => 'Enquiry submitted successfully.']);
