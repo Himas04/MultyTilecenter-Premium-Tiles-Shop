@@ -219,6 +219,4 @@ For website-related questions, contact the shop at:
 - 📱 **+94 77 599 3388**
 - 📍 **346 Kurunegala - Dambulla Rd, Galewela, Sri Lanka**
 
----
 
-*Built for CMN211 IT Project Management – TileVista Group Assignment, April 2026*
