@@ -95,7 +95,7 @@ em { font-style: italic; color: var(--terracotta); }
 }
 .preloader.hidden { opacity: 0; visibility: hidden; }
 .preloader-inner { text-align: center; }
-.preloader-logo { height: 100px; width: 100px; margin: 0 auto 1.5rem; display: block; }
+.preloader-logo { height: 120px; width: 112px; margin: 0 auto 1.5rem; display: block; }
 .preloader-text { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem; letter-spacing: .1em; }
 .preloader-bar { width: 200px; height: 2px; background: rgba(255,255,255,.2); border-radius: 2px; overflow: hidden; }
 .preloader-fill { height: 100%; background: var(--terracotta); animation: fill 1.8s ease forwards; }
@@ -117,7 +117,7 @@ em { font-style: italic; color: var(--terracotta); }
 .logo { display: flex; align-items: center; gap: .5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #fff; transition: var(--transition); }
 .nav.scrolled .logo, .nav.scrolled-auto .logo { color: var(--charcoal); }
 .logo-icon { color: var(--terracotta); font-size: 1.3rem; }
-.logo-svg { height: 44px; width: 44px; flex-shrink: 0; transition: var(--transition); }
+.logo-svg { height: 52px; width: 49px; flex-shrink: 0; transition: var(--transition); }
 .logo-text { letter-spacing: 0.05em; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { font-size: .875rem; font-weight: 400; color: rgba(255,255,255,.85); letter-spacing: .04em; transition: var(--transition); position: relative; }
@@ -241,7 +241,7 @@ em { font-style: italic; color: var(--terracotta); }
 .footer { background: #1c1916; color: rgba(255,255,255,.7); padding: 5rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-brand .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: .4rem; }
-.footer-logo-svg { height: 38px; width: 38px; flex-shrink: 0; }
+.footer-logo-svg { height: 46px; width: 43px; flex-shrink: 0; }
 .footer-brand p { font-size: .88rem; line-height: 1.8; color: rgba(255,255,255,.5); max-width: 260px; margin-bottom: 1.5rem; }
 .footer-socials { display: flex; gap: .75rem; }
 .footer-socials a { width: 36px; height: 36px; background: rgba(255,255,255,.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .82rem; color: rgba(255,255,255,.6); transition: var(--transition); }

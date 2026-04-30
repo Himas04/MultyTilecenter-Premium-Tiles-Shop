@@ -1,21 +1,124 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Scattered dot ring (like in the reference image) -->
-  <circle cx="100" cy="28"  r="2.8" fill="#C9952A"/>
-  <circle cx="128" cy="35"  r="2.0" fill="#7B4F1E"/>
-  <circle cx="150" cy="52"  r="2.8" fill="#C9952A"/>
-  <circle cx="160" cy="78"  r="2.0" fill="#7B4F1E" opacity="0.6"/>
-  <circle cx="155" cy="128" r="2.0" fill="#7B4F1E" opacity="0.6"/>
-  <circle cx="72"  cy="35"  r="2.0" fill="#7B4F1E"/>
-  <circle cx="50"  cy="52"  r="2.8" fill="#C9952A"/>
-  <circle cx="40"  cy="78"  r="2.0" fill="#7B4F1E" opacity="0.6"/>
-  <circle cx="45"  cy="128" r="2.0" fill="#7B4F1E" opacity="0.6"/>
-  <!-- Outer thin circle -->
-  <circle cx="100" cy="100" r="52" fill="none" stroke="#C9952A" stroke-width="1.4"/>
-  <!-- 2x2 tile grid inside circle -->
-  <rect x="68"  y="68"  width="28" height="28" rx="4" fill="#C9952A"/>
-  <rect x="100" y="68"  width="28" height="28" rx="4" fill="#5C3010"/>
-  <rect x="68"  y="100" width="28" height="28" rx="4" fill="#7B4F1E"/>
-  <rect x="100" y="100" width="28" height="28" rx="4" fill="#C9952A"/>
-  <!-- Center diamond gem -->
-  <polygon points="100,92 107,100 100,108 93,100" fill="#E8BF5A"/>
+<svg viewBox="0 0 280 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Silver gradient for borders / letter depth -->
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="30%"  stop-color="#D0D0D0"/>
+      <stop offset="70%"  stop-color="#A0A0A0"/>
+      <stop offset="100%" stop-color="#707070"/>
+    </linearGradient>
+    <!-- Letter face gradient (dark grey 3-D) -->
+    <linearGradient id="letterFace" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#5A5A5A"/>
+      <stop offset="100%" stop-color="#2E2E2E"/>
+    </linearGradient>
+    <!-- Letter edge shadow -->
+    <linearGradient id="letterEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#888"/>
+      <stop offset="100%" stop-color="#444"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#00000055"/>
+    </filter>
+    <filter id="tileShad" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#00000044"/>
+    </filter>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LEFT DIAMOND — orange tile grid             -->
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Diamond frame: rotate 45° square, centered ~(105,118) -->
+  <g transform="translate(105,118) rotate(45)" filter="url(#shadow)">
+    <!-- Silver outer frame -->
+    <rect x="-68" y="-68" width="136" height="136" rx="4"
+          fill="url(#silver)" />
+    <!-- Inner tile area background -->
+    <rect x="-56" y="-56" width="112" height="112" rx="2" fill="#E0E0E0"/>
+
+    <!-- 2x2 orange tiles with grout gaps -->
+    <!-- Top-left tile -->
+    <rect x="-54" y="-54" width="52" height="52" rx="2" fill="#F07820" filter="url(#tileShad)"/>
+    <!-- Top-right tile -->
+    <rect x="2"   y="-54" width="52" height="52" rx="2" fill="#F07820" filter="url(#tileShad)"/>
+    <!-- Bottom-left tile -->
+    <rect x="-54" y="2"   width="52" height="52" rx="2" fill="#E86A10" filter="url(#tileShad)"/>
+    <!-- Bottom-right tile -->
+    <rect x="2"   y="2"   width="52" height="52" rx="2" fill="#F07820" filter="url(#tileShad)"/>
+
+    <!-- Silver inner border ring -->
+    <rect x="-56" y="-56" width="112" height="112" rx="2"
+          fill="none" stroke="url(#silver)" stroke-width="5"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- RIGHT DIAMOND — black/green/blue tiles      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <g transform="translate(178,118) rotate(45)" filter="url(#shadow)">
+    <!-- Silver outer frame -->
+    <rect x="-68" y="-68" width="136" height="136" rx="4"
+          fill="url(#silver)" />
+    <!-- Inner tile area background -->
+    <rect x="-56" y="-56" width="112" height="112" rx="2" fill="#E0E0E0"/>
+
+    <!-- Top-left: sky blue -->
+    <rect x="-54" y="-54" width="52" height="52" rx="2" fill="#5BB8E8" filter="url(#tileShad)"/>
+    <!-- Top-right: sky blue -->
+    <rect x="2"   y="-54" width="52" height="52" rx="2" fill="#7BCBF0" filter="url(#tileShad)"/>
+    <!-- Bottom-left: black -->
+    <rect x="-54" y="2"   width="52" height="52" rx="2" fill="#1A1A1A" filter="url(#tileShad)"/>
+    <!-- Bottom-right: green -->
+    <rect x="2"   y="2"   width="52" height="52" rx="2" fill="#2E9E4F" filter="url(#tileShad)"/>
+
+    <!-- Silver inner border ring -->
+    <rect x="-56" y="-56" width="112" height="112" rx="2"
+          fill="none" stroke="url(#silver)" stroke-width="5"/>
+  </g>
+
+  <!-- Small black accent tile overlapping centre bottom (matches original) -->
+  <g transform="translate(141,165) rotate(45)">
+    <rect x="-14" y="-14" width="28" height="28" rx="1" fill="#111" filter="url(#tileShad)"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MTC LETTERS — bold 3-D dark grey + silver  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Outer silver border text (slightly larger, offset) -->
+  <text x="140" y="267"
+    text-anchor="middle"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="88"
+    font-weight="900"
+    letter-spacing="-2"
+    fill="url(#silver)"
+    stroke="url(#silver)"
+    stroke-width="8"
+    stroke-linejoin="round"
+    filter="url(#shadow)"
+  >MTC</text>
+
+  <!-- White highlight inner ring -->
+  <text x="140" y="267"
+    text-anchor="middle"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="88"
+    font-weight="900"
+    letter-spacing="-2"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="4"
+    stroke-linejoin="round"
+    opacity="0.7"
+  >MTC</text>
+
+  <!-- Main letter face — dark grey -->
+  <text x="140" y="267"
+    text-anchor="middle"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="88"
+    font-weight="900"
+    letter-spacing="-2"
+    fill="url(#letterFace)"
+  >MTC</text>
+
 </svg>
